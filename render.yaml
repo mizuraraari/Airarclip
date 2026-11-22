@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ai-auto-editor-web
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: WEB_ACCESS_PASSWORD
+        sync: false
+      - key: MAX_FINALIZE_MB
+        value: "40"
+      - key: CORS_ORIGINS
+        value: "*"

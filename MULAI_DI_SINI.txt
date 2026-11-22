@@ -1,0 +1,15 @@
+# AI AUTO EDITOR — SIAP DEPLOY
+
+## Cara pakai
+1. Upload seluruh isi folder `AutoVideoEditor` ke GitHub.
+2. Deploy sebagai Docker Web Service (Render bisa membaca `render.yaml`).
+3. Isi environment secrets di hosting:
+   - `OPENAI_API_KEY` = API key OpenAI milik admin (hanya di server).
+   - `WEB_ACCESS_PASSWORD` = password untuk masuk ke editor.
+4. Setelah status deploy aktif, buka URL website. Pilih video, atur preset, masukkan password website, lalu tekan AUTO EDIT VIDEO.
+
+## Penting
+- File HTML tunggal `AI_AUTO_EDITOR.html` adalah antarmuka. Untuk fitur AI dan render MP4, HTML harus disajikan pada domain/server yang menjalankan backend pada project ini; membuka file HTML langsung dari penyimpanan HP tidak akan menjalankan engine.
+- Jangan memasukkan API key ke HTML atau membagikannya.
+- Pemrosesan AI memerlukan koneksi internet dan dapat menimbulkan biaya API. Hosting gratis dapat tidur saat idle dan memiliki batas CPU/RAM/waktu.
+- Ikuti `WEB_README_ID.md` untuk detail deploy dan batasan.
